@@ -1,0 +1,138 @@
+[
+  {
+    "id": "1",
+    "name": "Wireless Bluetooth Headphones",
+    "description": "Premium quality wireless headphones with noise cancellation and 30-hour battery life.",
+    "price": 199,
+    "originalPrice": 249,
+    "image": "/placeholder.svg",
+    "category": "Electronics",
+    "rating": 4.5,
+    "inStock": true,
+    "features": ["Active Noise Cancellation", "30-hour battery life", "Bluetooth 5.0", "Quick charge (15 min = 3 hours)", "Premium leather ear cups"]
+  },
+  {
+    "id": "2",
+    "name": "Smart Fitness Watch",
+    "description": "Advanced fitness tracking with heart rate monitoring, GPS, and smartphone integration.",
+    "price": 299,
+    "image": "/placeholder.svg",
+    "category": "Electronics",
+    "rating": 4.8,
+    "inStock": true,
+    "features": ["Heart rate monitoring", "Built-in GPS", "Water resistant (50m)", "7-day battery life", "Sleep tracking"]
+  },
+  {
+    "id": "3",
+    "name": "Organic Cotton T-Shirt",
+    "description": "Comfortable, sustainable t-shirt made from 100% organic cotton. Perfect for everyday wear.",
+    "price": 29,
+    "originalPrice": 39,
+    "image": "/placeholder.svg",
+    "category": "Clothing",
+    "rating": 4.2,
+    "inStock": true,
+    "features": ["100% organic cotton", "Pre-shrunk fabric", "Reinforced seams", "Available in multiple colors", "Machine washable"]
+  },
+  {
+    "id": "4",
+    "name": "Professional Camera Lens",
+    "description": "High-quality 85mm portrait lens with fast autofocus and beautiful bokeh effect.",
+    "price": 899,
+    "image": "/placeholder.svg",
+    "category": "Electronics",
+    "rating": 4.9,
+    "inStock": false,
+    "features": ["85mm focal length", "f/1.4 maximum aperture", "Weather sealed", "Silent autofocus motor", "Professional grade optics"]
+  },
+  {
+    "id": "5",
+    "name": "Ergonomic Office Chair",
+    "description": "Comfortable office chair with lumbar support, adjustable height, and breathable mesh back.",
+    "price": 349,
+    "image": "/placeholder.svg",
+    "category": "Furniture",
+    "rating": 4.6,
+    "inStock": true,
+    "features": ["Lumbar support", "Adjustable height", "Breathable mesh back", "360-degree swivel", "5-year warranty"]
+  },
+  {
+    "id": "6",
+    "name": "Stainless Steel Water Bottle",
+    "description": "Insulated water bottle that keeps drinks cold for 24 hours or hot for 12 hours.",
+    "price": 34,
+    "image": "/placeholder.svg",
+    "category": "Sports",
+    "rating": 4.4,
+    "inStock": true,
+    "features": ["Double-wall insulation", "BPA-free materials", "Leak-proof design", "750ml capacity", "Easy-clean wide mouth"]
+  },
+  {
+    "id": "7",
+    "name": "Wireless Charging Pad",
+    "description": "Fast wireless charging pad compatible with all Qi-enabled devices. Sleek and minimalist design.",
+    "price": 49,
+    "image": "/placeholder.svg",
+    "category": "Electronics",
+    "rating": 4.3,
+    "inStock": true,
+    "features": ["Fast wireless charging", "Qi-compatible", "LED charging indicator", "Non-slip surface", "Compact design"]
+  },
+  {
+    "id": "8",
+    "name": "Yoga Mat Premium",
+    "description": "Extra thick yoga mat with superior grip and cushioning. Perfect for all types of yoga practice.",
+    "price": 79,
+    "originalPrice": 99,
+    "image": "/placeholder.svg",
+    "category": "Sports",
+    "rating": 4.7,
+    "inStock": true,
+    "features": ["6mm thickness", "Non-slip surface", "Eco-friendly materials", "Easy to clean", "Carrying strap included"]
+  },
+  {
+    "id": "9",
+    "name": "Coffee Maker Deluxe",
+    "description": "Programmable coffee maker with built-in grinder and thermal carafe. Makes perfect coffee every time.",
+    "price": 189,
+    "image": "/placeholder.svg",
+    "category": "Home",
+    "rating": 4.5,
+    "inStock": true,
+    "features": ["Built-in grinder", "Programmable timer", "Thermal carafe", "12-cup capacity", "Auto shut-off"]
+  },
+  {
+    "id": "10",
+    "name": "Designer Sunglasses",
+    "description": "Stylish sunglasses with UV protection and polarized lenses. Perfect for any occasion.",
+    "price": 159,
+    "image": "/placeholder.svg",
+    "category": "Fashion",
+    "rating": 4.1,
+    "inStock": false,
+    "features": ["UV400 protection", "Polarized lenses", "Lightweight frame", "Scratch resistant", "Designer case included"]
+  },
+  {
+    "id": "11",
+    "name": "Gaming Mechanical Keyboard",
+    "description": "RGB backlit mechanical keyboard with customizable keys and ultra-responsive switches.",
+    "price": 129,
+    "image": "/placeholder.svg",
+    "category": "Electronics",
+    "rating": 4.8,
+    "inStock": true,
+    "features": ["Mechanical switches", "RGB backlighting", "Programmable keys", "Anti-ghosting", "Detachable cable"]
+  },
+  {
+    "id": "12",
+    "name": "Leather Crossbody Bag",
+    "description": "Handcrafted leather crossbody bag with multiple compartments. Perfect for daily use.",
+    "price": 89,
+    "originalPrice": 119,
+    "image": "/placeholder.svg",
+    "category": "Fashion",
+    "rating": 4.6,
+    "inStock": true,
+    "features": ["Genuine leather", "Multiple compartments", "Adjustable strap", "Handcrafted quality", "Lifetime warranty"]
+  }
+]
