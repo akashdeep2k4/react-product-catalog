@@ -1,35 +1,64 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import { Outlet } from "react-router-dom";
+import { GlobalStyle } from "./style";
+import { Toaster } from "react-hot-toast";
+import { Header } from "./components/Header";
+import { Footer } from "./components/Footer";
+import styled, { ThemeProvider } from "styled-components";
+import { lightTheme, darkTheme } from "./theme";
+import { useState } from "react";
 
-function App() {
-  const [count, setCount] = useState(0)
+export const App = () => {
+  const [isDarkTheme, setIsDarkTheme] = useState(() => window.matchMedia("(prefers-color-scheme: dark)").matches);
+  const toggleTheme = () => setIsDarkTheme((prev) => !prev);
 
   return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
-}
+    <ThemeProvider theme={isDarkTheme ? darkTheme : lightTheme}>
+      <GlobalStyle />
+      <Toaster />
+      <>
+        <HeaderWrapper>
+          <Header isDarkTheme={isDarkTheme} toggleTheme={toggleTheme} />
+        </HeaderWrapper>
 
-export default App
+        <MainWrapper>
+          <MainContainer>
+            <Outlet />
+          </MainContainer>
+        </MainWrapper>
+
+        <FooterWrapper>
+          <Footer />
+        </FooterWrapper>
+      </>
+    </ThemeProvider>
+  );
+};
+
+const HeaderWrapper = styled.div`
+  top: 0;
+  left: 0;
+  position: fixed;
+  z-index: 9;
+  width: 100%;
+  border-bottom: 2px solid ${({ theme }) => theme.secondary};
+`;
+
+const MainWrapper = styled.div`
+  width: 100%;
+`;
+
+const FooterWrapper = styled.div`
+  border-top: 2px solid ${({ theme }) => theme.secondary};
+`;
+
+const MainContainer = styled.main`
+  margin-top: 64px;
+  max-width: 1280px;
+  width: 100%;
+  margin-inline: auto;
+  min-height: 100vh;
+  padding-block: 32px;
+  padding-inline: clamp(16px, 3.123vw, 32px);
+  background-color: ${({ theme }) => theme.primary};
+  color: ${({ theme }) => theme.secondary};
+`;
