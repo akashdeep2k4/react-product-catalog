@@ -1,13 +1,16 @@
+// Footer.jsx - Application footer component
 import styled from "styled-components";
 
 export const Footer = () => {
   return (
     <FooterContainer>
+      {/* Copyright text with current year */}
       <FooterText>© {new Date().getFullYear()} Product Catlog. All rights reserved. </FooterText>
     </FooterContainer>
   );
 };
 
+// Styled components for footer layout
 const FooterContainer = styled.footer`
   max-width: 1280px;
   width: 100%;

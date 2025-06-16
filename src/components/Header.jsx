@@ -1,3 +1,4 @@
+// Header.jsx - Application header with logo, theme toggle, and cart icon
 import { FiMoon, FiShoppingBag, FiShoppingCart, FiSun } from "react-icons/fi";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
@@ -5,11 +6,14 @@ import styled from "styled-components";
 export const Header = ({ isDarkTheme, toggleTheme }) => {
   return (
     <HeaderContainer>
+      {/* Logo links to home */}
       <Logo to={"/"}>
         <FiShoppingBag /> Product Catlog
       </Logo>
       <Buttons>
+        {/* Theme toggle button */}
         <ThemeButton onClick={toggleTheme}> {isDarkTheme ? <FiMoon /> : <FiSun />} </ThemeButton>
+        {/* Cart icon button (no action) */}
         <CartButton>
           <FiShoppingCart />
         </CartButton>
@@ -18,6 +22,7 @@ export const Header = ({ isDarkTheme, toggleTheme }) => {
   );
 };
 
+// Styled components for header layout
 const HeaderContainer = styled.header`
   max-width: 1280px;
   width: 100%;

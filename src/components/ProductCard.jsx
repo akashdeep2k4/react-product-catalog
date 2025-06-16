@@ -1,23 +1,28 @@
+// ProductCard.jsx - Card component to display product info
 import toast from "react-hot-toast";
 import { FiShoppingCart, FiStar } from "react-icons/fi";
 import { useNavigate } from "react-router-dom";
 import styled from "styled-components";
 
 export const ProductCard = ({ product }) => {
+  // Destructure product properties
   const { category, description, id, image, inStock, name, originalPrice, price, rating } = product;
 
+  // Handler for adding product to cart
   const addToCart = () => {
     toast("Added to Cart!");
   };
 
   const navigate = useNavigate();
 
+  // Navigate to product details page
   const handleNavigate = () => {
     navigate(`/products/${id}`, { state: { product } });
   };
 
   return (
     <StyledCard>
+      {/* Product image, clickable to details */}
       <ImageWrappper>
         <CardImage onClick={handleNavigate} src={image} alt={name} />
       </ImageWrappper>
@@ -28,12 +33,15 @@ export const ProductCard = ({ product }) => {
             <FiStar fill="gold" color="yellow" /> {rating}
           </Rating>
         </BrandAndRating>
+        {/* Product name, clickable to details */}
         <Name onClick={handleNavigate}>{name}</Name>
         <Description>{description}</Description>
+        {/* Price section */}
         <Price>
           <SellingPrice>₹{price}</SellingPrice>
           {originalPrice && <OriginalPrice>₹{originalPrice}</OriginalPrice>}
         </Price>
+        {/* Add to cart button */}
         <CartBtn onClick={addToCart}>
           <FiShoppingCart /> <span>Add</span>
         </CartBtn>

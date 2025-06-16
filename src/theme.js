@@ -1,3 +1,4 @@
+// theme.js - Theme definitions for styled-components
 export const lightTheme = {
   primary: "#FFFFFF",
   secondary: "#212121",

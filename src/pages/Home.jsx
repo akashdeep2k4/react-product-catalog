@@ -1,3 +1,4 @@
+// Home.jsx - Product catalog home page with search and filter
 import styled from "styled-components";
 import { ProductCard } from "../components/ProductCard";
 import { useEffect, useState } from "react";
@@ -5,11 +6,13 @@ import toast from "react-hot-toast";
 import { FiChevronDown, FiFilter, FiSearch } from "react-icons/fi";
 
 export const Home = () => {
+  // State for loading, products, search, and category filter
   const [loading, setLoading] = useState(false);
   const [products, setProducts] = useState([]);
   const [searchQuery, setSearchQuery] = useState("");
   const [selectedCategory, setSelectedCategory] = useState("");
 
+  // Fetch products from public/products.json on mount
   useEffect(() => {
     const fetchProducts = async () => {
       try {
@@ -26,14 +29,18 @@ export const Home = () => {
     fetchProducts();
   }, []);
 
+  // Extract unique categories from products
   const categories = [...new Set(products.map((product) => product.category))];
 
+  // Filter products by category and search query
   const filteredProducts = products.filter((p) => (selectedCategory ? p.category === selectedCategory : true)).filter((p) => p.name.toLowerCase().includes(searchQuery.toLowerCase()));
 
   return (
     <div>
+      {/* Page title */}
       <HomeText>Discover our amazing collection of products</HomeText>
 
+      {/* Search and filter controls */}
       <SearchAndFilter>
         <SearchContainer>
           <SearchInput type="text" placeholder="Search products..." value={searchQuery} onChange={(e) => setSearchQuery(e.target.value)} />
@@ -58,6 +65,7 @@ export const Home = () => {
         </FilterContainer>
       </SearchAndFilter>
 
+      {/* Product listing grid */}
       <ProductListing>
         {loading && "Loading..."}
         {filteredProducts.map((product) => (

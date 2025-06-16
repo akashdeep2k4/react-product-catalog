@@ -1,5 +1,7 @@
+// style.js - Global styles using styled-components
 import { createGlobalStyle } from "styled-components";
 
+// GlobalStyle applies base styles and resets
 export const GlobalStyle = createGlobalStyle`
   
   * {

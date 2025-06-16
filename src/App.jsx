@@ -1,3 +1,4 @@
+// App.jsx - Main application layout and theme provider
 import { Outlet } from "react-router-dom";
 import { GlobalStyle } from "./style";
 import { Toaster } from "react-hot-toast";
@@ -8,7 +9,9 @@ import { lightTheme, darkTheme } from "./theme";
 import { useState } from "react";
 
 export const App = () => {
+  // State to manage dark/light theme
   const [isDarkTheme, setIsDarkTheme] = useState(() => window.matchMedia("(prefers-color-scheme: dark)").matches);
+  // Toggle between dark and light theme
   const toggleTheme = () => setIsDarkTheme((prev) => !prev);
 
   return (
@@ -16,16 +19,19 @@ export const App = () => {
       <GlobalStyle />
       <Toaster />
       <>
+        {/* Header with theme toggle */}
         <HeaderWrapper>
           <Header isDarkTheme={isDarkTheme} toggleTheme={toggleTheme} />
         </HeaderWrapper>
 
+        {/* Main content area */}
         <MainWrapper>
           <MainContainer>
             <Outlet />
           </MainContainer>
         </MainWrapper>
 
+        {/* Footer */}
         <FooterWrapper>
           <Footer />
         </FooterWrapper>
@@ -34,6 +40,7 @@ export const App = () => {
   );
 };
 
+// Styled components for layout wrappers
 const HeaderWrapper = styled.div`
   top: 0;
   left: 0;

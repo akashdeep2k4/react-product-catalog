@@ -1,3 +1,4 @@
+// ProductDetails.jsx - Displays details for a single product
 import { useEffect, useState } from "react";
 import toast from "react-hot-toast";
 import { FiArrowLeft, FiHeart, FiShoppingCart, FiStar } from "react-icons/fi";
@@ -5,14 +6,18 @@ import { useLocation, useNavigate, useParams } from "react-router-dom";
 import styled from "styled-components";
 
 export const ProductDetails = () => {
+  // Get product from navigation state or fetch by id
   const { state } = useLocation();
   const { id } = useParams();
   const navigate = useNavigate();
   const [product, setProduct] = useState(state?.product || null);
+
+  // Add to cart handler
   const addToCart = () => {
     toast("Added to Cart!");
   };
 
+  // Fetch product details if not provided in state
   useEffect(() => {
     const fetchProduct = async () => {
       try {
@@ -31,11 +36,13 @@ export const ProductDetails = () => {
 
   return (
     <StyledDetailsPage>
+      {/* Back button to product list */}
       <BackButton onClick={() => navigate(-1)}>
         <FiArrowLeft />
         Back to Products
       </BackButton>
 
+      {/* Product details layout */}
       <StyledDetails>
         <ImageWrappper>
           <ProductImage src={product.image} alt={product.name} />
